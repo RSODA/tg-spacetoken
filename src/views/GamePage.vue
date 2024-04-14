@@ -48,7 +48,7 @@ export default {
 
 <template>
         <div class="bg-stone-950 w-full h-full mx-auto">
-          <p class="center text-2xl mx-auto text-center relative py-12">Hello, {{ this.users.user.name }}</p>
+          <p class="center text-2xl mx-auto text-center relative py-16">Hello, {{ this.users.user.name }}</p>
             <form @submit="tokenplus">
             <p class="center text-center text-5xl py-[5vh]">{{ this.users.user.sstoken }}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
