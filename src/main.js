@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3005'
+axios.defaults.baseURL = 'https://spacesheep.na4u.ru'
 
 import { createApp } from 'vue'
 import App from './App.vue'
