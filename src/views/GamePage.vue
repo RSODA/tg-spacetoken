@@ -47,7 +47,7 @@ export default {
 </script>
 
 <template>
-        <div class="bg-stone-950 w-full h-full mx-auto">
+        <div class="bg-stone-950 w-full h-[900px] mx-auto">
           <p class="center text-2xl mx-auto text-center relative py-16">Hello, {{ this.users.user.name }}</p>
             <form @submit="tokenplus">
             <p class="center text-center text-5xl py-[5vh]">{{ this.users.user.sstoken }}</p>
