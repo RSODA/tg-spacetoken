@@ -39,7 +39,7 @@ export default {
         <div class="bg-stone-950 w-full h-[1080px] mx-auto">
             <p class="center text-2xl mx-auto text-center relative py-3">Hello</p>
             <form @submit="tokenplus">
-            <p class="center text-center text-5xl py-[10vh]">{{ this.users.user.sstoken }} {{ this.usertg }}</p>
+            <p class="center text-center text-5xl py-[10vh]">{{ this.usertg }}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
                 <img src="../assets/sscoins.png" class="">
             </button>
