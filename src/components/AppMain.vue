@@ -13,7 +13,7 @@ export default {
       wallet: '',
       isError: false,
       errortext: '',
-      usertg: {},
+      usertg: [],
     };
   },
 
