@@ -50,6 +50,7 @@ export default {
 
     async getUser() {
       this.usertg = window.Telegram.WebApp.initData
+      console.log(usertg)
     }
   },
 }
