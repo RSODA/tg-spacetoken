@@ -1,9 +1,11 @@
 <script>
 import axios from 'axios';
+import {mapGetters} from 'vuex';
 
 export default {
   data() {
     return {
+      user: [],
       isPopoutOpen: false,
       isPopoutRegister: false,
       name: '',
@@ -11,11 +13,14 @@ export default {
       wallet: '',
       isError: false,
       errortext: '',
+      usertg: '',
     };
   },
 
-  mounted() {
+  computed: mapGetters(["users"]),
 
+  mounted() {
+    this.getUser();
   },
 
   methods: {
@@ -29,27 +34,41 @@ export default {
         this.$router.push('/game');
       }
     },
+
+    async tokenplus(evt){ 
+    evt.preventDefault();
+        this.users.user.sstoken += 1
+        await axios.post('/user/token', {
+            userId: this.users.user._id,
+            sstoken: this.users.user.sstoken
+        })
+    },
+
+    onClose() {
+      window.Telegram.WebApp.close();
+    },
+
+    async getUser() {
+      this.usertg = window.Telegram.WebApp.initDataUnsafe.query_id
+    }
   },
 }
 </script>
 
 <template>
         <div class="bg-stone-950 w-full h-[1080px] mx-auto">
-            <div class="popout1">
-                <div class="popout-content1">
-                    <p class="center text-2xl font-bold text-center" >Вход в аккаунт</p>
-                    <form @submit="login">
-    <input class="form-control" v-model="name" placeholder="Имя пользователя">
-    <input class="form-control" v-model="password" placeholder="Пароль" type="password">
-    <div v-if="isError" class="error">
-        {{ this.errortext }}
-    </div>
-    <button class="btntwoo mt-4 content-center border-4 border-white w-1/3 h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" type="submit">
-      Войти
-    </button>
-  </form>
-                </div>
-            </div>
+            <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.users.user.name }}</p>
+            <form @submit="tokenplus">
+            <p class="center text-center text-5xl py-[10vh]">{{ this.users.user.sstoken }} {{ this.usertg }}</p>
+            <button class="btntwoo mx-auto animate-spin" type="submit">
+                <img src="../assets/sscoins.png" class="">
+            </button>
+            <ul class="flex btntwoo my-[10%]">
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Buffs</button></li>
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Trade</button></li>
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Donate</button></li>
+            </ul>
+        </form>
         </div>
 </template>
 
@@ -58,6 +77,8 @@ html {
     overflow: hidden;
     color: white;
     font-family: 'Montserrat';
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .popout1 {
