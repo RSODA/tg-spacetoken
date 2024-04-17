@@ -64,9 +64,9 @@ export default {
                 <img src="../assets/sscoins.png" class="">
             </button>
             <ul class="flex btntwoo my-[10%]">
-                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose>Buffs</button></li>
-                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose>Trade</button></li>
-                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose>Donate</button></li>
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Buffs</button></li>
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Trade</button></li>
+                <li class="mx-2"><button class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Donate</button></li>
             </ul>
         </form>
         </div>
