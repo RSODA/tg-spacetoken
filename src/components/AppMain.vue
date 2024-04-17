@@ -29,7 +29,7 @@ export default {
     },
 
     async getUser() {
-      this.usertg = window.Telegram.WebApp.initDataUnsafe.user
+      this.usertg = window.Telegram.WebApp.initDataUnsafe.query_id
     }
   },
 }
