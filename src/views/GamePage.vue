@@ -20,7 +20,7 @@ export default {
   computed: mapGetters(["users"]),
 
   mounted() {
-
+    this.getUser();
   },
 
   methods: {
@@ -49,8 +49,7 @@ export default {
     },
 
     async getUser() {
-      this.usertg = window.Telegram.WebApp.initData;
-      console.log(usertg)
+      this.usertg = window.Telegram.WebApp.initDataUnsafe.query_id
     }
   },
 }
