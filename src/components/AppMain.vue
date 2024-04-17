@@ -24,26 +24,6 @@ export default {
   },
 
   methods: {
-    async login(evt) {
-      evt.preventDefault();
-      const user = await this.$store.dispatch('login', {
-        name: this.name,
-        password: this.password
-      });
-      if (user) {
-        this.$router.push('/game');
-      }
-    },
-
-    async tokenplus(evt){ 
-    evt.preventDefault();
-        this.users.user.sstoken += 1
-        await axios.post('/user/token', {
-            userId: this.users.user._id,
-            sstoken: this.users.user.sstoken
-        })
-    },
-
     onClose() {
       window.Telegram.WebApp.close();
     },
@@ -57,7 +37,7 @@ export default {
 
 <template>
         <div class="bg-stone-950 w-full h-[1080px] mx-auto">
-            <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.users.user.name }}</p>
+            <p class="center text-2xl mx-auto text-center relative py-3">Hello</p>
             <form @submit="tokenplus">
             <p class="center text-center text-5xl py-[10vh]">{{ this.users.user.sstoken }} {{ this.usertg }}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
