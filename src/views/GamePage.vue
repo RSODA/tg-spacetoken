@@ -13,6 +13,7 @@ export default {
       wallet: '',
       isError: false,
       errortext: '',
+      usertg: []
     };
   },
 
@@ -41,16 +42,20 @@ export default {
             userId: this.users.user._id,
             sstoken: this.users.user.sstoken
         })
+    },
+
+    async getUser() {
+      this.user = window.Telegram.WebApp.initData
     }
   },
 }
 </script>
 
 <template>
-        <div class="bg-stone-950 w-full h-[900px] mx-auto">
-          <p class="center text-2xl mx-auto text-center relative py-16">Hello, {{ this.users.user.name }}</p>
+        <div class="bg-stone-950 w-full h-[1080px] mx-auto">
+            <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.users.user.name }}</p>
             <form @submit="tokenplus">
-            <p class="center text-center text-5xl py-[5vh]">{{ this.users.user.sstoken }} {{ window.Telegram.WebApp.initDataUnsafe?.user?.username }} привет</p>
+            <p class="center text-center text-5xl py-[10vh]">{{ this.users.user.sstoken }} {{ window.Telegram.WebApp.initDataUnsafe?.user?.username }}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
                 <img src="../assets/sscoins.png" class="">
             </button>
