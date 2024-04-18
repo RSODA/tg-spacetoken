@@ -47,7 +47,7 @@ export default {
 
 <template>
         <div class="bg-stone-950 w-full h-[1080px] mx-auto">
-            <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.usertg.username }}</p>
+            <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.tgUserData.sscoins }}</p>
             <form @submit="tokenplus">
             <p class="center text-center text-5xl py-[10vh]">{{this.usertg.id}}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
