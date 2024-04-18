@@ -34,13 +34,12 @@ export default {
       this.usertg = window.Telegram.WebApp.initDataUnsafe.user
     },
 
-    async tguserlogin() {
-      await axios.post('/tguser/tglogin', {
-        tgid: this.usertg.id
-      });
+    const response = await axios.post('/tguser/tglogin', {
+    tgid: this.usertg.id
+  });
 
-      this.user = response.data;
-      this.tgUserData = response.data;
+  this.user = response.data;
+  this.tgUserData = response.data;
     }
   },
 }
