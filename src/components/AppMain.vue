@@ -48,7 +48,7 @@ export default {
 
       this.tgUserData.tgUserData.sscoins += 1
       
-      await axios.post('/user/token', {
+      await axios.post('/tguser/token', {
         tgid: this.tgUserData.tgUserData.tgid,
         sscoins: this.tgUserData.tgUserData.sscoins
       })
