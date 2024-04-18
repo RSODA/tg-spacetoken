@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { response } from 'express';
 import {mapGetters} from 'vuex';
 
 export default {
@@ -40,6 +41,7 @@ export default {
       });
 
       this.user = response.data;
+      this.tgUserData = response.data;
     }
   },
 }
