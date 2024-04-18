@@ -30,10 +30,11 @@ export default {
       window.Telegram.WebApp.close();
     },
 
-    await tguserlogin() {
+    async tguserlogin() {
     const response = await axios.post('/tguser/tglogin', {
     tgid: this.usertg.id
   })
+},
 
     async getUser() {
       this.usertg = window.Telegram.WebApp.initDataUnsafe.user
