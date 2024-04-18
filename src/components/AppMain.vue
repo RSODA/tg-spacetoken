@@ -34,7 +34,7 @@ export default {
       this.usertg = window.Telegram.WebApp.initDataUnsafe.user
     },
 
-    const response = await axios.post('/tguser/tglogin', {
+    await axios.post('/tguser/tglogin', {
     tgid: this.usertg.id
   });
 
