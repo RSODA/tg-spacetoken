@@ -41,7 +41,6 @@ export default {
       });
 
       this.user = response.data;
-      this.tgUserData = response.data;
     }
   },
 }
