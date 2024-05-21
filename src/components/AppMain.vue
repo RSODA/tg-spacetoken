@@ -71,6 +71,7 @@ export default {
         <div class="bg-stone-950 w-full h-[1080px] mx-auto">
             <p class="center text-2xl mx-auto text-center relative py-3">Hello, {{ this.usertg.username }}</p>
             <form @submit="tokenplus">
+               <li class="mx-2"><p class="mt-4 content-center border-4 border-white w-[10vh] h-[40px] rounded-2xl hover:border-1 hoverborder-cyan-50 hover:border-2 text-center items-center mx-auto" @click="onClose">Bitcoin price {{ this.bitcoinPrice }}</button></p>
             <p class="center text-center text-5xl py-[10vh]">{{this.tgUserData.tgUserData.sscoins}}</p>
             <button class="btntwoo mx-auto animate-spin" type="submit">
                 <img src="../assets/sscoins.png" class="">
